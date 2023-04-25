@@ -1,22 +1,17 @@
 package main
 
-import "fmt"
-
-const (
-	Big   = 1 << 100
-	Small = Big >> 99
+import (
+	"fmt"
+	"math"
 )
 
-func needIntt(x int) int {
-	return x*10 + 1
-}
-
-func needFloat(x float64) float64 {
-	return x * 0.1
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
 }
 
 func main() {
-	fmt.Println(needIntt(Small))
-	fmt.Println(needFloat(Small))
-	fmt.Println(needFloat(Big))
+	fmt.Println(sqrt(2), sqrt(-4))
 }
