@@ -1,3 +1,3 @@
-module func_tour
+module Function
 
 go 1.20
