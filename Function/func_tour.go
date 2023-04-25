@@ -1,19 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"runtime"
-)
+import "fmt"
 
 func main() {
-	fmt.Print("Go runs on\n")
-	switch os := runtime.GOOS; os {
-	case "darwin":
-		fmt.Println("OS X")
-	case "linux":
-		fmt.Println("Linux")
-	default:
-		fmt.Printf("%s. \n", os)
-
+	fmt.Println("counting")
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
 	}
+	fmt.Println("done")
 }
